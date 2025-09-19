@@ -9,6 +9,8 @@ export default function Login()
       <input type="text" placeholder='Username' />
       <input type="password" placeholder='Password' />
       <button>Submit</button>
+      <h4>Tech Hotline: 0716942067</h4>
+      <h4>Email: support@tech.mail</h4>
       <button className='support-btn'>Contact Support</button>
     </div>
 
@@ -24,6 +26,26 @@ export default function Login()
         alt="Insta Icon"
         className='insta-icon' 
       />
+      <img
+        src="https://img.icons8.com/?size=100&id=fdfLpA6fsXN2&format=png&color=000000"
+        alt="Tiktok Icon"
+        className='tiktok-icon' 
+      />
+      <img
+        src="https://img.icons8.com/?size=100&id=9a46bTk3awwI&format=png&color=000000"
+        alt="YT Icon"
+        className='yt-icon' 
+      />
+    </div>
+
+    <div className="products">
+      <h2>Our Products</h2>
+      <div className="product-scroll">
+        <div className="product-square">Product 1</div>
+        <div className="product-square">Product 2</div>
+        <div className="product-square">Product 3</div>
+        <div className="product-square">Product 4</div>
+      </div>
     </div>
     </>
   )
