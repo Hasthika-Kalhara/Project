@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+#root {
+  max-width: 1280px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.square {
+  width: 400px;
+  height: 550px;
+  background-color: #F6F1E9;
+  border-radius: 10px;
+  position: absolute;
+  top: 80px;
+  right: 60px;
+}
+
+.square input {
+  width : 80%;
+  margin: 3% 5%;
+  padding: 10px;
+  position: relative;
+  top: 150px;
+  font-size: 1rem;
+  background-color: #FFF9E5;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+}
+
+.square button {
+  width: 85%;
+  padding: 10px;
+  position: relative;
+  top: 150px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.square h1 {
+  position: relative;
+  top: 80px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.square .support-btn {
+  width: 45%;
+  padding: 3px;
+  position: relative;
+  top: 200px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+.socials {
+  width: 600px;
+  height: 70px;
+  background-color: #F6F1E9;
+  border-radius: 10px;
+  position: absolute;
+  top: 540px;
+  left: 80px;
+}
+
+.socials h2 {
+  position: relative;
+  bottom: 85px;
+  right: 190px;
+  font-size: 2rem;
+  color: #F6F1E9;
+}
+
+.fb-icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  bottom: 90px;
+  right: 240px;
+  cursor: pointer;
+}
+
+.insta-icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  bottom: 90px;
+  right: 230px;
+  cursor: pointer;
+}
