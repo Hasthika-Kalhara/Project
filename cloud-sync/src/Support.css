@@ -6,3 +6,97 @@
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
+
+.support-square h1 {
+  position: relative;
+  top: 25px;
+  right: 450px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.support-square {
+  width: 1200px;
+  height: 550px;
+  background-color: #E8F0FE;
+  border-radius: 10px;
+  position: absolute;
+  top: 80px;
+  left: 180px;
+}
+
+.support-ticket {
+  width: 270px;
+  height: 40px;
+  background-color: red;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+  right: 180px;
+}
+
+.support-ticket h3 {
+  position: relative;
+  bottom: 7px;
+  right: 1px;
+  font-size: 1rem;
+  color: #E8F0FE;
+  text-align: center;
+}
+
+.support-square label .name {
+  position: relative;
+  top: 80px;
+  right: 450px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.support-square select {
+  width: 200px;
+  padding: 8px;
+  margin-top: 30px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.customer-label {
+  display: block;
+  margin-top: 70px; /* Reduced from 110px */
+  margin-left: 70px;
+  font-size: 1.2rem;
+  color: #000; /* Changed to black */
+  text-align: left;
+}
+
+.customer-section {
+  margin-bottom: 40px;
+}
+
+.dropdown-section {
+  margin-bottom: 10px;
+  margin-right: 60px;
+  margin-top: -150px;
+}
+
+.dropdown-label {
+  display: block;
+  margin-left: 70px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: left;
+}
+
+.customer-input {
+  width: 200px;
+  padding: 10px;
+  margin-top: 75px;
+  margin-right: 0px;
+  margin-left: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: #ccc;
+}
