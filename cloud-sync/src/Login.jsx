@@ -1,4 +1,5 @@
-import './Login.css'
+import {Link} from 'react-router-dom';
+import './Login.css';
 
 export default function Login() 
 {
@@ -11,7 +12,7 @@ export default function Login()
       <button>Submit</button>
       <h4>Tech Hotline: 0716942067</h4>
       <h4>Email: support@tech.mail</h4>
-      <button className='support-btn'>Contact Support</button>
+      <Link to="/support" className="support-btn">Contact Support</Link>
     </div>
 
     <div className="socials">

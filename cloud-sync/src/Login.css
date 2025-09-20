@@ -29,6 +29,7 @@
   background-color: #FFF9E5;
   border: 2px solid #ccc;
   border-radius: 7px;
+  color: #333;
 }
 
 .square button {
@@ -56,14 +57,27 @@
   color: #333;
 }
 
-.square .support-btn {
+.support-btn {
   width: 45%;
   padding: 3px;
   position: relative;
   top: 190px;
   font-size: 0.9rem;
-  color: white;
+  color: black;
+  background-color: #FFD966;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none; /* Remove underline for links */
+  display: inline-block;
+}
+
+.support-btn:hover, .support-btn:focus, .support-btn:active {
+  background-color: #FFC107;
+  color: black;
+  text-decoration: none;
+  outline: none;
 }
 
 .socials {
