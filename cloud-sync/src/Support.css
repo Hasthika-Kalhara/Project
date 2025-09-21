@@ -7,24 +7,85 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.support-square h1 {
-  position: relative;
-  top: 25px;
-  right: 450px;
-  font-size: 2rem;
-  color: #333;
-}
-
 .support-square {
   width: 1200px;
   height: 550px;
-  background-color: #E8F0FE;
+  background-color: #fff;
   border-radius: 10px;
   position: absolute;
   top: 80px;
   left: 180px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+.support-square h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-left: 70px;
+}
+
+/* FLEX SECTIONS */
+.customer-section,
+.company-section,
+.country-section,
+.phone-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spacing between elements */
+  margin: 20px 70px;
+  text-align: left;
+}
+
+/* LABELS */
+.customer-label,
+.company-label,
+.country-label,
+.phone-label {
+  font-size: 1.2rem;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* INPUTS */
+.customer-input,
+.company-input,
+.phone-input {
+  width: 200px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+/* DROPDOWN */
+.dropdown-select,
+.country-select,
+.phone-select {
+  width: 100px;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+.country-select {
+  width: 160px;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+/* TICKET BOX */
 .support-ticket {
   width: 270px;
   height: 40px;
@@ -33,70 +94,13 @@
   position: absolute;
   top: 100px;
   right: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .support-ticket h3 {
-  position: relative;
-  bottom: 7px;
-  right: 1px;
   font-size: 1rem;
-  color: #E8F0FE;
-  text-align: center;
-}
-
-.support-square label .name {
-  position: relative;
-  top: 80px;
-  right: 450px;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.support-square select {
-  width: 200px;
-  padding: 8px;
-  margin-top: 30px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.customer-label {
-  display: block;
-  margin-top: 70px; /* Reduced from 110px */
-  margin-left: 70px;
-  font-size: 1.2rem;
-  color: #000; /* Changed to black */
-  text-align: left;
-}
-
-.customer-section {
-  margin-bottom: 40px;
-}
-
-.dropdown-section {
-  margin-bottom: 10px;
-  margin-right: 60px;
-  margin-top: -150px;
-}
-
-.dropdown-label {
-  display: block;
-  margin-left: 70px;
-  font-size: 1.2rem;
-  color: #333;
-  text-align: left;
-}
-
-.customer-input {
-  width: 200px;
-  padding: 10px;
-  margin-top: 75px;
-  margin-right: 0px;
-  margin-left: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #333;
-  color: #ccc;
+  color: #e8f0fe;
+  margin: 0;
 }
