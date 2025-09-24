@@ -3,15 +3,25 @@ import './Support.css';
 
 export default function Support() {
   const [ticketNumber, setTicketNumber] = useState('');
+  const [selectedFiles, setSelectedFiles] = useState([]); // store file previews
 
   // SUPPORT TICKET FETCH
   useEffect(() => {
-    // Replace with your backend API endpoint
     fetch('https://your-backend.com/api/ticket')
       .then(response => response.json())
       .then(data => setTicketNumber(data.ticketNumber))
       .catch(error => setTicketNumber('Error fetching ticket'));
   }, []);
+
+  // Handle file selection
+  const handleFileChange = (event) => {
+    const files = Array.from(event.target.files);
+    const filePreviews = files.map(file => ({
+      name: file.name,
+      url: URL.createObjectURL(file)
+    }));
+    setSelectedFiles(filePreviews);
+  };
 
   return (
     <>
@@ -62,7 +72,7 @@ export default function Support() {
           <label htmlFor="country" className="country-label">
             Country:
           </label>
-          <select id="title" name="title" className="country-select">
+          <select id="country" name="country" className="country-select">
             <option value="" disabled selected>
               Select Country:
             </option>
@@ -76,7 +86,7 @@ export default function Support() {
           <label htmlFor="phone-number" className="phone-label">
             Phone No:
           </label>
-          <select id="title" name="title" className="country-select">
+          <select id="phone-code" name="phone-code" className="country-select">
             <option value="" disabled selected>
               Country code
             </option>
@@ -89,6 +99,67 @@ export default function Support() {
             className="phone-input"
             placeholder="Enter phone number"
           />
+        </div>
+
+        {/* EMAIL SECTION */}
+        <div className="email-section">
+          <label htmlFor="email" className="email-label">
+            Email:
+          </label>
+          <input
+            type="text"
+            id="email"
+            className="email-input"
+            placeholder="Enter email"
+          />
+        </div>
+
+        {/* DETAIL SECTION */}
+        <div className="details-section">
+          <label htmlFor="details" className="details-label">
+            Please detail<br />your issue:
+          </label>
+          <textarea
+            id="details"
+            className="detail-textarea"
+            placeholder="Enter your message here..."
+            rows="5"
+          ></textarea>
+        </div>
+
+        {/* ATTACH IMAGE SECTION */}
+        <div className="attach-section">
+          <label htmlFor="attach-image" className="attach-label">
+            Attach images (if any):
+          </label>
+          <input
+            type="file"
+            id="attach-image"
+            className="filename"
+            accept="image/*"
+            multiple
+            onChange={handleFileChange}
+          />
+        </div>
+
+        {/* IMAGE PREVIEW */}
+        <div className="image-preview">
+          {selectedFiles.map((file, index) => (
+            <img
+              key={index}
+              src={file.url}
+              alt={file.name}
+              style={{
+                maxWidth: '200px',
+                maxHeight: '200px',
+                borderRadius: '5px',
+                margin: '10px 10px 0 70px'
+              }}
+            />
+          ))}
+        </div>
+        <div className="button-section">
+          <button type="submit">Submit</button>
         </div>
       </div>
 

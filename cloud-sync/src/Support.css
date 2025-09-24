@@ -17,6 +17,21 @@
   left: 180px;
   padding: 20px;
   box-sizing: border-box;
+  overflow-y: auto; /* vertical scrollbar when needed */
+  overflow-x: hidden; /* hide horizontal scrollbar */
+}
+
+.support-square::-webkit-scrollbar {
+  width: 8px;
+}
+
+.support-square::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.support-square::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
 }
 
 .support-square h1 {
@@ -31,7 +46,10 @@
 .customer-section,
 .company-section,
 .country-section,
-.phone-section {
+.phone-section,
+.email-section,
+.details-section,
+.button-section {
   display: flex;
   align-items: center;
   gap: 15px; /* spacing between elements */
@@ -39,20 +57,39 @@
   text-align: left;
 }
 
+.attach-section {
+  display: flex;
+  flex-direction: row; /* place label and input side by side */
+  align-items: center; /* vertically center them */
+  margin: 20px 70px;
+  gap: 10px; /* spacing between label and input */
+}
+
 /* LABELS */
 .customer-label,
 .company-label,
 .country-label,
-.phone-label {
-  font-size: 1.2rem;
+.phone-label,
+.email-label,
+.attach-label {
+  font-size: 1.1rem;
   color: #000;
   white-space: nowrap;
+}
+
+.details-label {
+  font-size: 1.1rem;
+  color: #000;
+  white-space: nowrap;
+  align-self: flex-start; /* pushes label to the top */
+  margin-top: 5px; /* fine-tune spacing */
 }
 
 /* INPUTS */
 .customer-input,
 .company-input,
-.phone-input {
+.phone-input,
+.email-input {
   width: 200px;
   padding: 10px;
   font-size: 1rem;
@@ -60,6 +97,28 @@
   border: 1px solid #ccc;
   background-color: #fff;
   color: #333;
+}
+
+.filename {
+  width: 250px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+.detail-textarea {
+  width: 500px;
+  height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  resize: none; /* Prevent resizing */
 }
 
 /* DROPDOWN */
@@ -83,6 +142,13 @@
   border: 1px solid #ccc;
   background-color: #fff;
   color: #333;
+}
+
+.button-section button {
+  font-size: 1rem;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* TICKET BOX */
