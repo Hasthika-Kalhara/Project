@@ -17,9 +17,9 @@ html, body {
   display: flex;
   justify-content: space-between; /* space between hamburger + title */
   align-items: center;
-  background-color: #1e1e2f;
+  background-color: #F6F1E9;
   padding: 15px 30px;
-  color: white;
+  color: #333;
   z-index: 1000;
 }
 
@@ -43,17 +43,19 @@ html, body {
   text-align: left;
   top: 90px; /* below navbar */
   left: 0;
-  width: 260px;
-  background-color: #1e1e2f;
+  width: 270px;
+  background-color: #F6F1E9;
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   padding: 10px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 16px;
+  font-weight: 600;
   height: 20px;
   padding: 20px;
   transition: background 0.3s ease;
@@ -61,4 +63,6 @@ html, body {
 
 .nav-link:hover {
   background-color: #333;
+  color: white;
+  border-radius: 5px;
 }
