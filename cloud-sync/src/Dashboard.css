@@ -14,6 +14,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
+  height: 40px;
   width: 100%;
   display: flex;
   justify-content: space-between; /* space between hamburger + title */
@@ -51,7 +52,7 @@ html, body {
 .dropdown {
   position: fixed;
   text-align: left;
-  top: 90px; /* below navbar */
+  top: 65px; /* below navbar */
   left: 0;
   width: 270px;
   background-color: #333;
