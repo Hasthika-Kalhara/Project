@@ -99,25 +99,43 @@ export default function Dashboard() {
         <div className="quick-stats">
           <div className="stat-card">
             <div className="stat-icon">👤</div>
-            <div className="stat-label">Active Accounts</div>
+            <div className="stat-label">Test</div>
             <div className="stat-value">1,247</div>
           </div>
           
           <div className="stat-card">
             <div className="stat-icon">🗒️</div>
-            <div className="stat-label">Pending Invoices</div>
+            <div className="stat-label">Test</div>
             <div className="stat-value">23</div>
           </div>
           
           <div className="stat-card">
             <div className="stat-icon">🛒</div>
-            <div className="stat-label">Inventory Items</div>
+            <div className="stat-label">Test</div>
             <div className="stat-value">5,681</div>
           </div>
           
           <div className="stat-card">
-            <div className="stat-icon">💰</div>
-            <div className="stat-label">Monthly Revenue</div>
+            <div className="stat-icon">😀</div>
+            <div className="stat-label">Test</div>
+            <div className="stat-value">$45.2K</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">👨</div>
+            <div className="stat-label">Test</div>
+            <div className="stat-value">$45.2K</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">📞</div>
+            <div className="stat-label">Test</div>
+            <div className="stat-value">$45.2K</div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">🌍</div>
+            <div className="stat-label">Test</div>
             <div className="stat-value">$45.2K</div>
           </div>
         </div>
