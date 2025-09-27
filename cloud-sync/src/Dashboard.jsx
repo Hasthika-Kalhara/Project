@@ -25,16 +25,6 @@ export default function Dashboard() {
     };
   }, [menuOpen]);
 
-  // Handle keyboard navigation
-  const handleKeyDown = (event) => {
-    if (event.key === 'Escape') {
-      setMenuOpen(false);
-    }
-    if (event.key === 'Enter' || event.key === ' ') {
-      setMenuOpen(!menuOpen);
-    }
-  };
-
   const menuItems = [
     { icon: '👤', label: 'Accounts', href: '/accounts' },
     { icon: '💰', label: 'Costing and Inventory', href: '/costing-inventory' },
@@ -53,7 +43,6 @@ export default function Dashboard() {
           ref={hamburgerRef}
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
-          onKeyDown={handleKeyDown}
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
           aria-controls="dropdown-menu"
