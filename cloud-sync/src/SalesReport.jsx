@@ -6,6 +6,7 @@ export default function SalesReport()
     const [menuOpen, setMenuOpen] = useState(false);
     const dropdownRef = useRef(null);
     const hamburgerRef = useRef(null);
+    const [date, setDate] = useState(""); // Track selected date
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -78,8 +79,22 @@ export default function SalesReport()
             )}
 
             <div className="sales-content">
-                
+                <div className="date-range">
+                    <input
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        className="date-picker"
+                    />
+                    <input
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        className="date-picker2"
+                    />
+                </div>
             </div>
+
         </div>
     )
 }

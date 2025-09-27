@@ -120,5 +120,38 @@
 .sales-content {
   margin-top: 70px;
   width: 1160px;
-  background: white;
+  /* background: white; */
+}
+
+/* Date picker styling */
+.date-range {
+  display: flex;
+  gap: 20px; /* spacing between pickers */
+  padding-top: 40px;
+  padding-left:30px;
+}
+
+.date-picker,
+.date-picker2 {
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  outline: none;
+  width: 220px;
+ 
+  transition: all 0.3s ease;
+}
+
+.date-picker:hover,
+.date-picker2:hover {
+  border-color: #ccc;
+  color: #fff;
+}
+
+.date-picker:focus,
+.date-picker2:focus {
+  border-color: #ccc;
+  box-shadow: 0 0 6px rgba(51, 51, 51, 0.4);
 }
