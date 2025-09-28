@@ -94,6 +94,7 @@ export default function SalesReport() {
         >
           ☰
         </button>
+        <h2 className="page-title">Sales Report</h2>
         <h2 className="nav-title">Company Name</h2>
       </div>
 
@@ -181,6 +182,7 @@ export default function SalesReport() {
             <table className="sales-table">
               <thead>
                 <tr>
+                  <th>s/NO</th>
                   <th>Invoice NO</th>
                   <th>Customer Name</th>
                   <th>Time</th>
@@ -192,6 +194,7 @@ export default function SalesReport() {
               <tbody>
                 {salesData.map((sale, index) => (
                   <tr key={index}>
+                    <td>{sale.no}</td>
                     <td>{sale.invoice}</td>
                     <td>{sale.customer}</td>
                     <td>{sale.time}</td>

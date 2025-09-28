@@ -60,6 +60,12 @@
   margin-right: 60px;
 }
 
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 1050px;
+}
+
 .dropdown {
   position: fixed;
   text-align: left;
