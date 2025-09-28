@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/sales-report" element={<SalesReport />} />
-        <Route path="/iw-report" element={<IWReport />} />
+        <Route path="/itemwise-report" element={<ItemWiseReport />} />
       </Routes>
     </BrowserRouter>
   );
