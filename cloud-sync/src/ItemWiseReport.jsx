@@ -91,7 +91,7 @@ export default function ItemWiseReport() {
         >
           ☰
         </button>
-        <h2 className="page-title">Item Wise Report</h2>
+        <h2 className="iw-title">Item Wise Report</h2>
         <h2 className="nav-title">Company Name</h2>
       </div>
 
@@ -185,7 +185,7 @@ export default function ItemWiseReport() {
                     <td>{item.invoice}</td>
                     <td>{item.name}</td>
                     <td>{item.qty}</td>
-                    <td>{item.price}</td>
+                    <td>{item.sales}</td>
                     <td>{item.discount}</td>
                     <td>{item.total}</td>
                   </tr>

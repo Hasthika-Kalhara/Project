@@ -94,7 +94,7 @@ export default function SalesReport() {
         >
           ☰
         </button>
-        <h2 className="page-title">Sales Report</h2>
+        <h2 className="sr-title">Sales Report</h2>
         <h2 className="nav-title">Company Name</h2>
       </div>
 

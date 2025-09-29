@@ -1,0 +1,223 @@
+/* Dashboard-specific background */
+.pl-report-container {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  width: 131%;
+  /* Alternative background options: */
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  /* background-color: #1a1a2e; */
+}
+
+#root {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 30px;
+  color: #F6F1E9;
+  z-index: 1000;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background-color: #555;
+  color: wheat;
+  outline: 2px solid wheat;
+  outline-offset: 2px;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 60px;
+}
+
+.pl-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 1030px;
+}
+
+.dropdown {
+  position: fixed;
+  text-align: left;
+  top: 65px;
+  left: 0;
+  width: 270px;
+  background-color: #333;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.2s ease-out;
+  z-index: 1001;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #F6F1E9;
+  font-size: 16px;
+  font-weight: 600;
+  height: 20px;
+  padding: 20px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #F6F1E9;
+  color: #333;
+  border-radius: 5px;
+  outline: 2px solid #F6F1E9;
+  outline-offset: -2px;
+}
+
+.nav-link-icon {
+  font-size: 18px;
+}
+
+.nav-link-text {
+  flex: 1;
+}
+
+.pl-content {
+  margin-top: 70px;
+  width: 1160px;
+  /* background: white; */
+}
+
+/* Container for date pickers + payment type */
+/* Container for filters */
+.date-range {
+  display: flex;
+  gap: 20px;
+  padding-top: 40px;
+  padding-left: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Common styles for date pickers and dropdown */
+.date-picker,
+.date-picker2,
+.item-type,
+.all-search {
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  outline: none;
+  width: 220px;
+  transition: all 0.3s ease;
+}
+
+/* Hover and focus effects */
+.date-picker:hover,
+.date-picker2:hover,
+.item-type:hover,
+.all-search:hover {
+  border-color: #ccc;
+  cursor: pointer;
+}
+
+.date-picker:focus,
+.date-picker2:focus,
+.item-type:focus,
+.all-search:focus {
+  border-color: #ccc;
+  box-shadow: 0 0 6px rgba(51, 51, 51, 0.4);
+}
+
+/* Make payment-type slightly wider on larger screens if desired */
+@media (min-width: 1200px) {
+  .date-picker,
+  .date-picker2,
+  .item-type,
+  .all-search {
+    width: 240px;
+  }
+}
+
+/* Table container */
+.pl-table-container {
+  margin: 30px;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+/* Table styling */
+.pl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.pl-table thead {
+  background-color: #333;
+  color: #F6F1E9;
+}
+
+.pl-table th,
+.pl-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.pl-table th {
+  font-weight: 600;
+}
+
+.pl-table td {
+  color: #444;
+}
+
