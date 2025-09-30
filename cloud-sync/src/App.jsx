@@ -5,6 +5,7 @@ import Dashboard from './Dashboard.jsx';
 import SalesReport from './SalesReport.jsx';
 import ItemWiseReport from './ItemWiseReport.jsx';
 import PLReport from './PLReport.jsx';
+import DEReport from './DEReport.jsx';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/sales-report" element={<SalesReport />} />
         <Route path="/itemwise-report" element={<ItemWiseReport />} />
         <Route path="/pl-report" element={<PLReport />} />
+        <Route path="/de-report" element={<DEReport />} />
       </Routes>
     </BrowserRouter>
   );
