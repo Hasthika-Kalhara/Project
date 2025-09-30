@@ -147,37 +147,48 @@ export default function DebtorReport() {
 
         {/* Debtor Table */}
         <div className="debtor-table-container">
-          {loading && <p>Loading debtor data...</p>}
-          {error && <p style={{ color: "red" }}>{error}</p>}
-          {!loading && !error && debtorData.length === 0 && (
-            <p>No debtor data for the selected filters.</p>
-          )}
-          {!loading && !error && debtorData.length > 0 && (
-            <table className="debtor-table">
-              <thead>
-                <tr>
-                  <th>Invoice No</th>
-                  <th>Customer</th>
-                  <th>Date</th>
-                  <th>Amount</th>
-                  <th>Paid</th>
-                  <th>Balance</th>
-                </tr>
-              </thead>
-              <tbody>
-                {debtorData.map((debtor, index) => (
-                  <tr key={index}>
-                    <td>{debtor.invoice}</td>
-                    <td>{debtor.customer}</td>
-                    <td>{debtor.date}</td>
-                    <td>{debtor.amount}</td>
-                    <td>{debtor.paid}</td>
-                    <td>{debtor.balance}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+            {loading && <p>Loading debtor data...</p>}
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            {!loading && !error && debtorData.length === 0 && (
+                <p>No debtor data for the selected filters.</p>
+            )}
+            {!loading && !error && debtorData.length > 0 && (
+                <table className="debtor-table">
+                <thead>
+                    <tr>
+                    <th>S/No</th>
+                    <th>Invoice No</th>
+                    <th>Customer Name</th>
+                    <th>Invoice Amount</th>
+                    <th>Paid Amount</th>
+                    <th>Due Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {debtorData.map((debtor, index) => (
+                    <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{debtor.invoice}</td>
+                        <td>{debtor.customer}</td>
+                        <td>{debtor.invoiceAmount}</td>
+                        <td>{debtor.paid}</td>
+                        <td>{debtor.due}</td>
+                    </tr>
+                    ))}
+                </tbody>
+                <tfoot>
+                    <tr>
+                    <td colSpan="4" style={{ fontWeight: "bold" }}>Total</td>
+                    <td style={{ fontWeight: "bold" }}>
+                        {debtorData.reduce((sum, d) => sum + Number(d.paid || 0), 0)}
+                    </td>
+                    <td style={{ fontWeight: "bold" }}>
+                        {debtorData.reduce((sum, d) => sum + Number(d.due || 0), 0)}
+                    </td>
+                    </tr>
+                </tfoot>
+                </table>
+            )}
         </div>
       </div>
     </div>
