@@ -1,0 +1,165 @@
+.debtor-container {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  width: 131%;
+}
+
+#root {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 30px;
+  color: #F6F1E9;
+  z-index: 1000;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.hamburger:hover {
+  background-color: #555;
+  color: wheat;
+}
+
+.deb-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 1050px;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 60px;
+}
+
+.dropdown {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 270px;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #F6F1E9;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link:hover {
+  background-color: #F6F1E9;
+  color: #333;
+  border-radius: 5px;
+}
+
+.debtor-content {
+  margin-top: 70px;
+  width: 1160px;
+}
+
+/* Filters */
+.date-range {
+  display: flex;
+  gap: 20px;
+  padding: 40px 30px 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.date-picker,
+.customer-type,
+.all-search {
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  width: 220px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.date-picker:hover,
+.customer-type:hover,
+.all-search:hover {
+  border-color: #ccc;
+}
+
+.date-picker:focus,
+.customer-type:focus,
+.all-search:focus {
+  border-color: #ccc;
+  box-shadow: 0 0 6px rgba(51, 51, 51, 0.4);
+}
+
+/* Table */
+.debtor-table-container {
+  margin: 30px;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+.debtor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.debtor-table thead {
+  background-color: #333;
+  color: #F6F1E9;
+}
+
+.debtor-table th,
+.debtor-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.debtor-table th {
+  font-weight: 600;
+}
+
+.debtor-table td {
+  color: #444;
+}
