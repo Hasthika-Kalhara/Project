@@ -133,24 +133,26 @@ export default function DEReport() {
               <thead>
                 <tr>
                   <th>s/NO</th>
-                  <th>Invoice NO</th>
-                  <th>Item Name</th>
-                  <th>QTY</th>
-                  <th>Sales Price</th>
-                  <th>Discount Amount</th>
-                  <th>Total</th>
+                  <th>User</th>
+                  <th>Opening Balance</th>
+                  <th>Day Start Time</th>
+                  <th>Day End Time</th>
+                  <th>Total Hours</th>
+                  <th>Cash Out</th>
+                  <th>Day End Amount</th>
                 </tr>
               </thead>
               <tbody>
                 {reportData.map((row, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{row.invoice}</td>
-                    <td>{row.name}</td>
-                    <td>{row.qty}</td>
-                    <td>{row.price}</td>
-                    <td>{row.discount}</td>
-                    <td>{row.total}</td>
+                    <td>{row.user}</td>
+                    <td>{row.open}</td>
+                    <td>{row.start}</td>
+                    <td>{row.end}</td>
+                    <td>{row.hours}</td>
+                    <td>{row.cash}</td>
+                    <td>{row.amount}</td>
                   </tr>
                 ))}
               </tbody>
