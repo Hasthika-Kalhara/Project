@@ -7,6 +7,7 @@ import ItemWiseReport from './ItemWiseReport.jsx';
 import PLReport from './PLReport.jsx';
 import DEReport from './DEReport.jsx';
 import DebtorReport from './DebtorReport.jsx';
+import CreditorReport from './CreditorReport.jsx';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/pl-report" element={<PLReport />} />
         <Route path="/de-report" element={<DEReport />} />
         <Route path="/debtor-report" element={<DebtorReport />} />
+        <Route path="/creditor-report" element={<CreditorReport />} />
       </Routes>
     </BrowserRouter>
   );
