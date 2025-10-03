@@ -134,21 +134,22 @@ export default function SAReport() {
           <table className="report-table">
             <thead>
               <tr>
-                <th>Date</th>
+                <th>s/NO</th>
                 <th>Item Name</th>
-                <th>Adjustment Type</th>
-                <th>Quantity</th>
-                <th>Remarks</th>
+                <th>UOM</th>
+                <th>Available Stock</th>
+                <th>Adjust Qty</th>
+                <th>Actual Available Stock</th>
               </tr>
             </thead>
             <tbody>
               {reportData.map((row, index) => (
                 <tr key={index}>
-                  <td>{row.date}</td>
                   <td>{row.itemName}</td>
-                  <td>{row.type}</td>
-                  <td>{row.quantity}</td>
-                  <td>{row.remarks}</td>
+                  <td>{row.uom}</td>
+                  <td>{row.availableStock}</td>
+                  <td>{row.adjustQty}</td>
+                  <td>{row.stock}</td>
                 </tr>
               ))}
             </tbody>
