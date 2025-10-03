@@ -216,3 +216,21 @@
 .quotation-table td {
   color: #444;
 }
+
+.view-btn {
+  padding: 6px 14px;
+  background-color: #333;
+  color: #F6F1E9;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #555;
+  color: wheat;
+}
+

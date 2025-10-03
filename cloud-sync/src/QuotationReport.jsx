@@ -133,7 +133,7 @@ export default function QuotationReport() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        
+
       </div>
 
       {/* Table */}
@@ -155,17 +155,25 @@ export default function QuotationReport() {
               </tr>
             </thead>
             <tbody>
-              {quotationData.map((q, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{q.quotationNumber}</td>
-                  <td>{q.customerName}</td>
-                  <td>{q.date}</td>
-                  <td>{q.total}</td>
-                  <td>{q.status}</td>
-                </tr>
-              ))}
+                {quotationData.map((q, index) => (
+                    <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{q.quotationNumber}</td>
+                    <td>{q.customerName}</td>
+                    <td>{q.date}</td>
+                    <td>{q.total}</td>
+                    <td>
+                        <button 
+                        className="view-btn"
+                        onClick={() => alert(`Viewing quotation: ${q.quotationNumber}`)}
+                        >
+                        View
+                        </button>
+                    </td>
+                    </tr>
+                ))}
             </tbody>
+
           </table>
         )}
       </div>
