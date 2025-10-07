@@ -13,6 +13,7 @@ import SAReport from './SAReport.jsx';
 import QuotationReport from './QuotationReport.jsx';
 import ItemReport from './ItemReport.jsx';
 import ReorderReport from './ReorderReport.jsx';
+import MovingItemReport from './MovingItemReport.jsx';
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/q-report" element={<QuotationReport />} />
         <Route path="/item-report" element={<ItemReport />} />
         <Route path="/reorder-report" element={<ReorderReport />} />
+        <Route path="/moving-item-report" element={<MovingItemReport />} />
       </Routes>
     </BrowserRouter>
   );
