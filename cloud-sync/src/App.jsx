@@ -14,6 +14,7 @@ import QuotationReport from './QuotationReport.jsx';
 import ItemReport from './ItemReport.jsx';
 import ReorderReport from './ReorderReport.jsx';
 import MovingItemReport from './MovingItemReport.jsx';
+import NonMovingItemReport from './NonMovingItemReport.jsx';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/item-report" element={<ItemReport />} />
         <Route path="/reorder-report" element={<ReorderReport />} />
         <Route path="/moving-item-report" element={<MovingItemReport />} />
+        <Route path="/nonmoving-item-report" element={<NonMovingItemReport />} />
       </Routes>
     </BrowserRouter>
   );
