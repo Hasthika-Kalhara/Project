@@ -199,3 +199,15 @@
 .report-table tr:hover td {
   background-color: #f7f7f7;
 }
+
+.total-row {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  border-top: 2px solid #333;
+}
+
+.total-row td {
+  padding: 10px 16px;
+  color: #333;
+}
+

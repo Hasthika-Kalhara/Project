@@ -45,7 +45,6 @@ export default function AttendsReport() {
       .catch((err) => console.error("Error fetching employees:", err));
   };
 
-  // Run once when component mounts
   useEffect(() => {
     fetchEmployees();
   }, []);
@@ -54,7 +53,7 @@ export default function AttendsReport() {
   useEffect(() => {
     const debounceFetch = setTimeout(() => {
       fetchReport();
-    }, 400); // delay to avoid spamming API during typing
+    }, 400);
     return () => clearTimeout(debounceFetch);
   }, [fromDate, toDate, employeeName, searchQuery]);
 
@@ -72,6 +71,20 @@ export default function AttendsReport() {
     if (menuOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
+
+  // 🧮 Calculate totals
+  const totalCheckOut = attendData.reduce(
+    (sum, item) => sum + (parseFloat(item.checkOut) || 0),
+    0
+  );
+  const totalWorkingHours = attendData.reduce(
+    (sum, item) => sum + (parseFloat(item.workedHours) || 0),
+    0
+  );
+  const totalWorkingDays = attendData.reduce(
+    (sum, item) => sum + (parseFloat(item.workedDays) || 0),
+    0
+  );
 
   return (
     <div className="attends-report-container">
@@ -107,23 +120,18 @@ export default function AttendsReport() {
 
       {/* FILTER SECTION */}
       <div className="report-filters">
-        <label>
-          <input
-            type="date"
-            value={fromDate}
-            onChange={(e) => setFromDate(e.target.value)}
-            className="date-input"
-          />
-        </label>
-        <label>
-          <input
-            type="date"
-            value={toDate}
-            onChange={(e) => setToDate(e.target.value)}
-            className="date-input"
-          />
-        </label>
-
+        <input
+          type="date"
+          value={fromDate}
+          onChange={(e) => setFromDate(e.target.value)}
+          className="date-input"
+        />
+        <input
+          type="date"
+          value={toDate}
+          onChange={(e) => setToDate(e.target.value)}
+          className="date-input"
+        />
         <select
           value={employeeName}
           onChange={(e) => setEmployeeName(e.target.value)}
@@ -136,7 +144,6 @@ export default function AttendsReport() {
             </option>
           ))}
         </select>
-
         <input
           type="text"
           placeholder="Search..."
@@ -156,24 +163,40 @@ export default function AttendsReport() {
           <table className="report-table">
             <thead>
               <tr>
+                <th>s/NO</th>
                 <th>Employee Name</th>
                 <th>Date</th>
                 <th>Check In</th>
                 <th>Check Out</th>
-                <th>Worked Hours</th>
+                <th>Working Hours</th>
+                <th>Working Days</th>
               </tr>
             </thead>
             <tbody>
               {attendData.map((row, index) => (
                 <tr key={index}>
+                  <td>{row.sNo}</td>
                   <td>{row.employeeName}</td>
                   <td>{row.date}</td>
                   <td>{row.checkIn}</td>
                   <td>{row.checkOut}</td>
                   <td>{row.workedHours}</td>
+                  <td>{row.workedDays}</td>
                 </tr>
               ))}
             </tbody>
+
+            {/* ✅ TOTAL ROW */}
+            <tfoot>
+              <tr className="total-row">
+                <td colSpan="4" style={{ textAlign: "right", fontWeight: "600" }}>
+                  Total:
+                </td>
+                <td>{totalCheckOut.toFixed(2)}</td>
+                <td>{totalWorkingHours.toFixed(2)}</td>
+                <td>{totalWorkingDays.toFixed(2)}</td>
+              </tr>
+            </tfoot>
           </table>
         )}
       </div>
