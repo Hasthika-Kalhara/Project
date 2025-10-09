@@ -18,6 +18,7 @@ import NonMovingItemReport from './NonMovingItemReport.jsx';
 import AttendsReport from './AttendsReport.jsx';
 import ItemRegister from './ItemRegister.jsx';
 import EditItem from './EditItem.jsx';
+import CategoryRegister from './CategoryRegister.jsx';
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/attends-report" element={<AttendsReport />} />
         <Route path="/item-register" element={<ItemRegister />} />
         <Route path="/edit-item" element={<EditItem />} />
+        <Route path="/category-register" element={<CategoryRegister />} />
       </Routes>
     </BrowserRouter>
   );
