@@ -17,6 +17,7 @@ import MovingItemReport from './MovingItemReport.jsx';
 import NonMovingItemReport from './NonMovingItemReport.jsx';
 import AttendsReport from './AttendsReport.jsx';
 import ItemRegister from './ItemRegister.jsx';
+import EditItem from './EditItem.jsx';
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/nonmoving-item-report" element={<NonMovingItemReport />} />
         <Route path="/attends-report" element={<AttendsReport />} />
         <Route path="/item-register" element={<ItemRegister />} />
+        <Route path="/edit-item" element={<EditItem />} />
       </Routes>
     </BrowserRouter>
   );
