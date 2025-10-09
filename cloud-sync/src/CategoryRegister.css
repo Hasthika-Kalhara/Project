@@ -1,0 +1,149 @@
+/* Container */
+.category-register-container {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+  padding-top: 70px; /* push content below navbar */
+  width: 100%; /* full width */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background-color: #333;
+  color: #f6f1e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #f6f1e9;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-company {
+  font-size: 16px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 250px;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1001;
+}
+
+.nav-link {
+  color: #f6f1e9;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  background-color: #f6f1e9;
+  color: #333;
+}
+
+/* Form */
+.category-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 50px auto;
+}
+
+.category-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 220px;
+}
+
+.save-btn {
+  padding: 10px 25px;
+  background-color: #333;
+  color: #f6f1e9;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.save-btn:hover {
+  background-color: #555;
+}
+
+/* Table Section */
+.table-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* Table Styling */
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-table th,
+.category-table td {
+  border: 1px solid #ddd;
+  padding: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+}
+
+.category-table th {
+  background-color: #333;
+  color: #f6f1e9;
+}
+
+.category-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.category-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* No categories message */
+.table-section p {
+  color: #333; /* dark color to make it visible */
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
