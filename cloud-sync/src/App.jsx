@@ -24,6 +24,7 @@ import CustomerRegister from './CustomerRegister.jsx';
 import GRN from './GRN.jsx';
 import GRNReport from './GRNReport.jsx';
 import UserRegister from './UserRegister.jsx';
+import UserPermission from './UserPermission.jsx';
 
 export default function App() {
   return (
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="/grn" element={<GRN />} />
         <Route path="/grn-report" element={<GRNReport />} />
         <Route path="/user-register" element={<UserRegister />} />
+        <Route path="/user-permission" element={<UserPermission />} />
       </Routes>
     </BrowserRouter>
   );
