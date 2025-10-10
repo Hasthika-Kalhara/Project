@@ -22,6 +22,7 @@ import CategoryRegister from './CategoryRegister.jsx';
 import SupplierRegister from './SupplierRegister.jsx';
 import CustomerRegister from './CustomerRegister.jsx';
 import GRN from './GRN.jsx';
+import GRNReport from './GRNReport.jsx';
 
 export default function App() {
   return (
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/supplier-register" element={<SupplierRegister />} />
         <Route path="/customer-register" element={<CustomerRegister />} />
         <Route path="/grn" element={<GRN />} />
+        <Route path="/grn-report" element={<GRNReport />} />
       </Routes>
     </BrowserRouter>
   );
