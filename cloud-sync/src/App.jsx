@@ -21,6 +21,7 @@ import EditItem from './EditItem.jsx';
 import CategoryRegister from './CategoryRegister.jsx';
 import SupplierRegister from './SupplierRegister.jsx';
 import CustomerRegister from './CustomerRegister.jsx';
+import GRN from './GRN.jsx';
 
 export default function App() {
   return (
