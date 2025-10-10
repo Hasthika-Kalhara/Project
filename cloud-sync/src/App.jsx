@@ -49,6 +49,7 @@ export default function App() {
         <Route path="/category-register" element={<CategoryRegister />} />
         <Route path="/supplier-register" element={<SupplierRegister />} />
         <Route path="/customer-register" element={<CustomerRegister />} />
+        <Route path="/grn" element={<GRN />} />
       </Routes>
     </BrowserRouter>
   );
