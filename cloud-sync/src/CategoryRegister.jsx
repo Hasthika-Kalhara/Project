@@ -68,7 +68,7 @@ export default function CategoryRegister() {
   return (
     <div className="category-register-container">
       {/* Navbar */}
-      <div className="navbar">
+      <div className="cat-navbar">
         <button
           ref={hamburgerRef}
           className="hamburger"
@@ -76,17 +76,17 @@ export default function CategoryRegister() {
         >
           ☰
         </button>
-        <div className="nav-title">Category Register</div>
-        <div className="nav-company">Company Name</div>
+        <div className="cat-title">Category Register</div>
+        <div className="cat-company">Company Name</div>
       </div>
 
       {/* Dropdown */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="cat-dropdown">
           {menuItems.map((item, i) => (
-            <a key={i} href={item.href} className="nav-link">
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+            <a key={i} href={item.href} className="cat-nav-link">
+              <span className="cat-nav-link-icon">{item.icon}</span>
+              <span className="cat-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -112,7 +112,7 @@ export default function CategoryRegister() {
       </div>
 
       {/* Table */}
-      <div className="table-section">
+      <div className="cat-table-section">
         {loading ? (
           <p>Loading...</p>
         ) : categories.length === 0 ? (
