@@ -103,16 +103,16 @@ export default function AttendsReport() {
 
       {/* NAVBAR DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="attend-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="attend-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="attend-nav-link-icon">{item.icon}</span>
+              <span className="attend-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
