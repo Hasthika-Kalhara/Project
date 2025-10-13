@@ -38,7 +38,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <div className="navbar">
+      <div className="dash-navbar">
         <button
           ref={hamburgerRef}
           className="hamburger"
@@ -50,13 +50,13 @@ export default function Dashboard() {
           ☰
         </button>
 
-        <h2 className="nav-title">Company Name</h2>
+        <h2 className="dash-nav-title">Company Name</h2>
       </div>
 
       {menuOpen && (
         <div 
           ref={dropdownRef}
-          className="dropdown"
+          className="dash-dropdown"
           id="dropdown-menu"
           role="menu"
           aria-label="Navigation menu"
@@ -65,7 +65,7 @@ export default function Dashboard() {
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="dash-nav-link"
               role="menuitem"
               onClick={() => setMenuOpen(false)}
             >
