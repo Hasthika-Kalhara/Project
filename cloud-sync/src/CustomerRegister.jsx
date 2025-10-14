@@ -98,7 +98,7 @@ export default function CustomerRegister() {
   return (
     <div className="customer-register-container">
       {/* NAVBAR */}
-      <div className="navbar">
+      <div className="reg-navbar">
         <button
           ref={hamburgerRef}
           className="hamburger"
@@ -117,7 +117,7 @@ export default function CustomerRegister() {
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="reg-nav-link"
               onClick={() => setMenuOpen(false)}
             >
               <span className="nav-link-icon">{item.icon}</span>
