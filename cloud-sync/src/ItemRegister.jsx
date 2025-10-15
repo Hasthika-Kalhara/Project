@@ -104,16 +104,16 @@ export default function ItemRegister() {
 
       {/* NAVBAR DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="ir-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="ir-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="ir-nav-link-icon">{item.icon}</span>
+              <span className="ir-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>

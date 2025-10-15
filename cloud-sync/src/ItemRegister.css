@@ -63,7 +63,7 @@
 }
 
 /* Dropdown */
-.dropdown {
+.ir-dropdown {
   position: fixed;
   text-align: left;
   top: 65px;
@@ -79,17 +79,45 @@
   z-index: 1001;
 }
 
-.nav-link {
-  color: #f6f1e9;
-  text-decoration: none;
-  padding: 12px;
-  font-weight: 600;
-  border-radius: 5px;
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.nav-link:hover {
-  background-color: #f6f1e9;
+.ir-nav-link {
+  text-decoration: none;
+  color: #F6F1E9;
+  font-size: 16px;
+  font-weight: 600;
+  height: 20px;
+  padding: 20px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ir-nav-link:hover,
+.ir-nav-link:focus {
+  background-color: #F6F1E9;
   color: #333;
+  border-radius: 5px;
+  outline: 2px solid #F6F1E9;
+  outline-offset: -2px;
+}
+
+.ir-nav-link-icon {
+  font-size: 18px;
+}
+
+.ir-nav-link-text {
+  flex: 1;
 }
 
 /* ✅ Form container fix */
