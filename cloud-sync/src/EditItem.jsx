@@ -54,7 +54,7 @@ export default function EditItem() {
   return (
     <div className="edit-item-container">
       {/* NAVBAR */}
-      <div className="navbar">
+      <div className="edit-navbar">
         <button
           ref={hamburgerRef}
           className="hamburger"
@@ -62,22 +62,22 @@ export default function EditItem() {
         >
           ☰
         </button>
-        <div className="nav-title">Edit Item</div>
-        <div className="nav-company">Company Name</div>
+        <div className="ei-title">Edit Item</div>
+        <div className="comp-title">Company Name</div>
       </div>
 
       {/* DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="edit-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="edit-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="edit-nav-link-icon">{item.icon}</span>
+              <span className="edit-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
