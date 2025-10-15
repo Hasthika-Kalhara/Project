@@ -64,16 +64,16 @@ export default function ItemReport() {
 
       {/* DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="ir-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="ir-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="ir-nav-link-icon">{item.icon}</span>
+              <span className="ir-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -97,8 +97,6 @@ export default function ItemReport() {
       <div className="item-table-container">
         {loading ? (
           <p>Loading...</p>
-        ) : itemData.length === 0 ? (
-          <p>No items found.</p>
         ) : (
           <table className="item-table">
             <thead>
@@ -111,15 +109,23 @@ export default function ItemReport() {
               </tr>
             </thead>
             <tbody>
-              {itemData.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.itemName}</td>
-                  <td>{row.category}</td>
-                  <td>{row.unitPrice}</td>
-                  <td>{row.stockQty}</td>
-                  <td>{row.updatedAt}</td>
+              {itemData.length === 0 ? (
+                <tr>
+                  <td colSpan="5" style={{ textAlign: "center" }}>
+                    No items found.
+                  </td>
                 </tr>
-              ))}
+              ) : (
+                itemData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.itemName}</td>
+                    <td>{row.category}</td>
+                    <td>{row.unitPrice}</td>
+                    <td>{row.stockQty}</td>
+                    <td>{row.updatedAt}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         )}

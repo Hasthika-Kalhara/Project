@@ -64,7 +64,7 @@
 }
 
 /* Dropdown */
-.dropdown {
+.ir-dropdown {
   position: fixed;
   text-align: left;
   top: 65px;
@@ -91,7 +91,7 @@
   }
 }
 
-.nav-link {
+.ir-nav-link {
   text-decoration: none;
   color: #F6F1E9;
   font-size: 16px;
@@ -104,8 +104,8 @@
   gap: 12px;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.ir-nav-link:hover,
+.ir-nav-link:focus {
   background-color: #F6F1E9;
   color: #333;
   border-radius: 5px;
@@ -113,11 +113,11 @@
   outline-offset: -2px;
 }
 
-.nav-link-icon {
+.ir-nav-link-icon {
   font-size: 18px;
 }
 
-.nav-link-text {
+.ir-nav-link-text {
   flex: 1;
 }
 
