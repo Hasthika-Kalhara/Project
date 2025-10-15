@@ -65,16 +65,16 @@ export default function MovingItemReport() {
 
       {/* DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="mir-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="mir-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="mir-nav-link-icon">{item.icon}</span>
+              <span className="mir-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -114,8 +114,6 @@ export default function MovingItemReport() {
       <div className="report-table-container">
         {loading ? (
           <p>Loading...</p>
-        ) : itemData.length === 0 ? (
-          <p>No records found.</p>
         ) : (
           <table className="report-table">
             <thead>
@@ -127,14 +125,22 @@ export default function MovingItemReport() {
               </tr>
             </thead>
             <tbody>
-              {itemData.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.itemName}</td>
-                  <td>{row.category}</td>
-                  <td>{row.qtyMoved}</td>
-                  <td>{row.lastMoved}</td>
+              {itemData.length === 0 ? (
+                <tr>
+                  <td colSpan="4" style={{ textAlign: "center" }}>
+                    No records found.
+                  </td>
                 </tr>
-              ))}
+              ) : (
+                itemData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.itemName}</td>
+                    <td>{row.category}</td>
+                    <td>{row.qtyMoved}</td>
+                    <td>{row.lastMoved}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         )}
