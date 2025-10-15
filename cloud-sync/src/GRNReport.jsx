@@ -98,16 +98,16 @@ export default function GRNReport() {
 
       {/* NAVBAR DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="grn-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="grn-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="grn-nav-link-icon">{item.icon}</span>
+              <span className="grn-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
