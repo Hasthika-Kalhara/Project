@@ -81,16 +81,16 @@ export default function QuotationReport() {
 
       {/* Dropdown */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="q-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="q-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="q-nav-link-icon">{item.icon}</span>
+              <span className="q-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -140,8 +140,6 @@ export default function QuotationReport() {
       <div className="quotation-table-container">
         {loading ? (
           <p>Loading quotations...</p>
-        ) : quotationData.length === 0 ? (
-          <p>No quotations found.</p>
         ) : (
           <table className="quotation-table">
             <thead>
@@ -155,25 +153,32 @@ export default function QuotationReport() {
               </tr>
             </thead>
             <tbody>
-                {quotationData.map((q, index) => (
-                    <tr key={index}>
+              {quotationData.length === 0 ? (
+                <tr>
+                  <td colSpan="6" style={{ textAlign: "center" }}>
+                    No quotations found.
+                  </td>
+                </tr>
+              ) : (
+                quotationData.map((q, index) => (
+                  <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{q.quotationNumber}</td>
                     <td>{q.customerName}</td>
                     <td>{q.date}</td>
                     <td>{q.total}</td>
                     <td>
-                        <button 
+                      <button 
                         className="view-btn"
                         onClick={() => alert(`Viewing quotation: ${q.quotationNumber}`)}
-                        >
+                      >
                         View
-                        </button>
+                      </button>
                     </td>
-                    </tr>
-                ))}
+                  </tr>
+                ))
+              )}
             </tbody>
-
           </table>
         )}
       </div>
