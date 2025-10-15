@@ -97,16 +97,16 @@ export default function ItemWiseReport() {
 
       {/* Dropdown menu */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown" id="dropdown-menu">
+        <div ref={dropdownRef} className="iw-dropdown" id="dropdown-menu">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="iw-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="iw-nav-link-icon">{item.icon}</span>
+              <span className="iw-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -162,10 +162,7 @@ export default function ItemWiseReport() {
         <div className="iw-table-container">
           {loading && <p>Loading item wise data...</p>}
           {error && <p style={{ color: "red" }}>{error}</p>}
-          {!loading && !error && itemData.length === 0 && (
-            <p>No item wise data for the selected filters.</p>
-          )}
-          {!loading && !error && itemData.length > 0 && (
+          {!loading && !error && (
             <table className="iw-table">
               <thead>
                 <tr>
@@ -179,17 +176,25 @@ export default function ItemWiseReport() {
                 </tr>
               </thead>
               <tbody>
-                {itemData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{item.invoice}</td>
-                    <td>{item.name}</td>
-                    <td>{item.qty}</td>
-                    <td>{item.sales}</td>
-                    <td>{item.discount}</td>
-                    <td>{item.total}</td>
+                {itemData.length === 0 ? (
+                  <tr>
+                    <td colSpan="7" style={{ textAlign: "center" }}>
+                      No item wise data for the selected filters.
+                    </td>
                   </tr>
-                ))}
+                ) : (
+                  itemData.map((item, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{item.invoice}</td>
+                      <td>{item.name}</td>
+                      <td>{item.qty}</td>
+                      <td>{item.sales}</td>
+                      <td>{item.discount}</td>
+                      <td>{item.total}</td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           )}
