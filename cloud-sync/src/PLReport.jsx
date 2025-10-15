@@ -98,16 +98,16 @@ export default function PLReport()
 
       {/* Dropdown menu */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown" id="dropdown-menu">
+        <div ref={dropdownRef} className="pl-dropdown" id="dropdown-menu">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="pl-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="pl-nav-link-icon">{item.icon}</span>
+              <span className="pl-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -163,10 +163,7 @@ export default function PLReport()
         <div className="pl-table-container">
           {loading && <p>Loading item wise data...</p>}
           {error && <p style={{ color: "red" }}>{error}</p>}
-          {!loading && !error && itemData.length === 0 && (
-            <p>No profit & loss data for the selected filters.</p>
-          )}
-          {!loading && !error && itemData.length > 0 && (
+          {!loading && !error && (
             <table className="pl-table">
               <thead>
                 <tr>
@@ -183,20 +180,28 @@ export default function PLReport()
                 </tr>
               </thead>
               <tbody>
-                {itemData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{item.invoice}</td>
-                    <td>{item.name}</td>
-                    <td>{item.qty}</td>
-                    <td>{item.cost}</td>
-                    <td>{item.sales}</td>
-                    <td>{item.margin}</td>
-                    <td>{item.discount}</td>
-                    <td>{item.loss}</td>
-                    <td>{item.profit}</td>
+                {itemData.length === 0 ? (
+                  <tr>
+                    <td colSpan="10" style={{ textAlign: "center" }}>
+                      No profit & loss data for the selected filters.
+                    </td>
                   </tr>
-                ))}
+                ) : (
+                  itemData.map((item, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{item.invoice}</td>
+                      <td>{item.name}</td>
+                      <td>{item.qty}</td>
+                      <td>{item.cost}</td>
+                      <td>{item.sales}</td>
+                      <td>{item.margin}</td>
+                      <td>{item.discount}</td>
+                      <td>{item.loss}</td>
+                      <td>{item.profit}</td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           )}
