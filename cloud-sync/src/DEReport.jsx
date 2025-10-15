@@ -85,16 +85,16 @@ export default function DEReport() {
 
       {/* Dropdown menu */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown" id="dropdown-menu">
+        <div ref={dropdownRef} className="de-dropdown" id="dropdown-menu">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="de-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="de-nav-link-icon">{item.icon}</span>
+              <span className="de-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
