@@ -67,16 +67,16 @@ export default function ReorderReport() {
 
       {/* DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="rp-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="rp-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="rp-nav-link-icon">{item.icon}</span>
+              <span className="rp-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -86,8 +86,6 @@ export default function ReorderReport() {
       <div className="reorder-table-container">
         {loading ? (
           <p>Loading...</p>
-        ) : reportData.length === 0 ? (
-          <p>No items found.</p>
         ) : (
           <table className="reorder-table">
             <thead>
@@ -100,15 +98,23 @@ export default function ReorderReport() {
               </tr>
             </thead>
             <tbody>
-              {reportData.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.itemName}</td>
-                  <td>{row.category}</td>
-                  <td>{row.stockQty}</td>
-                  <td>{row.reorderLevel}</td>
-                  <td>{row.supplier}</td>
+              {reportData.length === 0 ? (
+                <tr>
+                  <td colSpan="5" style={{ textAlign: "center" }}>
+                    No items found.
+                  </td>
                 </tr>
-              ))}
+              ) : (
+                reportData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.itemName}</td>
+                    <td>{row.category}</td>
+                    <td>{row.stockQty}</td>
+                    <td>{row.reorderLevel}</td>
+                    <td>{row.supplier}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         )}
