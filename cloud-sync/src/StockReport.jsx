@@ -73,8 +73,8 @@ export default function StockReport() {
         >
           ☰
         </button>
-        <h2 className="report-title">Stock Report</h2>
-        <h2 className="report-company">Company Name</h2>
+        <h2 className="stock-title">Stock Report</h2>
+        <h2 className="stock-company">Company Name</h2>
       </div>
 
       {/* Dropdown */}
@@ -125,8 +125,6 @@ export default function StockReport() {
         <div className="report-table-container">
           {loading ? (
             <p>Loading...</p>
-          ) : stockData.length === 0 ? (
-            <p>No stock data found.</p>
           ) : (
             <table className="report-table">
               <thead>
@@ -139,15 +137,23 @@ export default function StockReport() {
                 </tr>
               </thead>
               <tbody>
-                {stockData.map((row, index) => (
-                  <tr key={index}>
-                    <td>{row.itemName}</td>
-                    <td>{row.category}</td>
-                    <td>{row.stockQty}</td>
-                    <td>{row.unitPrice}</td>
-                    <td>{row.updatedAt}</td>
+                {stockData.length === 0 ? (
+                  <tr>
+                    <td colSpan="5" style={{ textAlign: "center" }}>
+                      No stock data found.
+                    </td>
                   </tr>
-                ))}
+                ) : (
+                  stockData.map((row, index) => (
+                    <tr key={index}>
+                      <td>{row.itemName}</td>
+                      <td>{row.category}</td>
+                      <td>{row.stockQty}</td>
+                      <td>{row.unitPrice}</td>
+                      <td>{row.updatedAt}</td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           )}

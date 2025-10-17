@@ -27,13 +27,13 @@
   z-index: 1000;
 }
 
-.report-title {
+.stock-title {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 1050px;
+  margin-right: 1090px;
 }
 
-.report-company {
+.stock-company {
   font-size: 18px;
   margin-right: 60px;
 }
@@ -54,6 +54,14 @@
   background: transparent;
   color: inherit;
   padding: 0;
+}
+
+.report-hamburger:hover,
+.report-hamburger:focus {
+  background-color: #555;
+  color: wheat;
+  outline: 2px solid wheat;
+  outline-offset: 2px;
 }
 
 /* Dropdown */
