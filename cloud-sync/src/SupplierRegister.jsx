@@ -112,16 +112,16 @@ export default function SupplierRegister() {
 
       {/* NAVBAR DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="sup-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="sup-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="sup-nav-link-icon">{item.icon}</span>
+              <span className="sup-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -204,7 +204,7 @@ export default function SupplierRegister() {
       </form>
 
       {/* SUPPLIERS TABLE */}
-      <div className="table-container">
+      <div className="sup-table-container">
         <h2>Registered Suppliers</h2>
         <table className="suppliers-table">
           <thead>

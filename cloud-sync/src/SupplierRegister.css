@@ -50,7 +50,7 @@
 .supplier-register-title {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 1000px;
+  margin-right: 1050px;
 }
 
 .nav-title {
@@ -59,7 +59,7 @@
 }
 
 /* Dropdown */
-.dropdown {
+.sup-dropdown {
   position: fixed;
   text-align: left;
   top: 65px;
@@ -86,20 +86,34 @@
   }
 }
 
-.nav-link {
-  color: #f6f1e9;
+.sup-nav-link {
   text-decoration: none;
-  padding: 12px;
+  color: #F6F1E9;
+  font-size: 16px;
   font-weight: 600;
-  border-radius: 5px;
+  height: 20px;
+  padding: 20px;
+  transition: background 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.nav-link:hover {
-  background-color: #f6f1e9;
+.sup-nav-link:hover,
+.sup-nav-link:focus {
+  background-color: #F6F1E9;
   color: #333;
+  border-radius: 5px;
+  outline: 2px solid #F6F1E9;
+  outline-offset: -2px;
+}
+
+.sup-nav-link-icon {
+  font-size: 18px;
+}
+
+.sup-nav-link-text {
+  flex: 1;
 }
 
 /* Form container */
@@ -168,16 +182,16 @@
 }
 
 /* Table container */
-.table-container {
+.sup-table-container {
   background: #fff;
-  margin: 30px auto;
+  margin: 0px auto;
   max-width: 1200px;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.table-container h2 {
+.sup-table-container h2 {
   color: #333;
   margin-bottom: 20px;
   font-size: 24px;
@@ -204,10 +218,6 @@
 .suppliers-table td {
   padding: 12px;
   border-bottom: 1px solid #e0e0e0;
-}
-
-.suppliers-table tbody tr:hover {
-  background-color: #f5f5f5;
 }
 
 .no-data {
