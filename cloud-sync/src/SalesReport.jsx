@@ -100,16 +100,16 @@ export default function SalesReport() {
 
       {/* Dropdown */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown" id="dropdown-menu">
+        <div ref={dropdownRef} className="sr-dropdown" id="dropdown-menu">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="sr-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="sr-nav-link-icon">{item.icon}</span>
+              <span className="sr-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -175,10 +175,7 @@ export default function SalesReport() {
         <div className="sales-table-container">
           {loading && <p>Loading sales data...</p>}
           {error && <p style={{ color: "red" }}>{error}</p>}
-          {!loading && !error && salesData.length === 0 && (
-            <p>No sales data for the selected filters.</p>
-          )}
-          {!loading && !error && salesData.length > 0 && (
+          {!loading && !error && (
             <table className="sales-table">
               <thead>
                 <tr>
@@ -192,17 +189,25 @@ export default function SalesReport() {
                 </tr>
               </thead>
               <tbody>
-                {salesData.map((sale, index) => (
-                  <tr key={index}>
-                    <td>{sale.no}</td>
-                    <td>{sale.invoice}</td>
-                    <td>{sale.customer}</td>
-                    <td>{sale.time}</td>
-                    <td>{sale.amount}</td>
-                    <td>{sale.discount}</td>
-                    <td>{sale.total}</td>
+                {salesData.length === 0 ? (
+                  <tr>
+                    <td colSpan="7" style={{ textAlign: "center" }}>
+                      No sales data for the selected filters.
+                    </td>
                   </tr>
-                ))}
+                ) : (
+                  salesData.map((sale, index) => (
+                    <tr key={index}>
+                      <td>{sale.no}</td>
+                      <td>{sale.invoice}</td>
+                      <td>{sale.customer}</td>
+                      <td>{sale.time}</td>
+                      <td>{sale.amount}</td>
+                      <td>{sale.discount}</td>
+                      <td>{sale.total}</td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           )}
