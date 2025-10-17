@@ -64,32 +64,41 @@ export default function SAReport() {
     <div className="stock-adjustment-container">
       {/* Navbar */}
       <div className="navbar">
-        <button
-          ref={hamburgerRef}
-          className="hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-          aria-controls="dropdown-menu"
-        >
-          ☰
-        </button>
+        <div className="nav-left">
+          <button
+            ref={hamburgerRef}
+            className="hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            aria-controls="dropdown-menu"
+          >
+            ☰
+          </button>
+      </div>
+
+      <div className="nav-center">
         <h2 className="report-title">Stock Adjustment Report</h2>
+      </div>
+
+      <div className="nav-right">
         <h2 className="nav-title">Company Name</h2>
       </div>
+    </div>
+
 
       {/* Dropdown */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown" id="dropdown-menu">
+        <div ref={dropdownRef} className="sa-dropdown" id="dropdown-menu">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="sa-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="sa-nav-link-icon">{item.icon}</span>
+              <span className="sa-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -128,8 +137,6 @@ export default function SAReport() {
       <div className="report-table-container">
         {loading ? (
           <p>Loading...</p>
-        ) : reportData.length === 0 ? (
-          <p>No stock adjustments found.</p>
         ) : (
           <table className="report-table">
             <thead>
@@ -143,15 +150,24 @@ export default function SAReport() {
               </tr>
             </thead>
             <tbody>
-              {reportData.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.itemName}</td>
-                  <td>{row.uom}</td>
-                  <td>{row.availableStock}</td>
-                  <td>{row.adjustQty}</td>
-                  <td>{row.stock}</td>
+              {reportData.length === 0 ? (
+                <tr>
+                  <td colSpan="6" style={{ textAlign: "center" }}>
+                    No stock adjustments found.
+                  </td>
                 </tr>
-              ))}
+              ) : (
+                reportData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{row.itemName}</td>
+                    <td>{row.uom}</td>
+                    <td>{row.availableStock}</td>
+                    <td>{row.adjustQty}</td>
+                    <td>{row.stock}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         )}

@@ -1,8 +1,9 @@
-/* Page container */
+/* Page Container */
 .stock-adjustment-container {
   min-height: 100vh;
   background-color: #f0f2f5;
-  width: 161.5%;
+  width: 167.97%;
+  padding-top: 60px; /* Push content below navbar */
 }
 
 #root {
@@ -11,6 +12,7 @@
   padding: 0;
 }
 
+/* Navbar */
 /* Navbar */
 .navbar {
   position: fixed;
@@ -25,6 +27,15 @@
   padding: 15px 30px;
   color: #F6F1E9;
   z-index: 1000;
+}
+
+
+/* Left Section - Hamburger */
+.nav-left {
+  display: flex;
+  align-items: center;
+  min-width: 50px; /* ensure hamburger has space */
+  justify-content: flex-start;
 }
 
 .hamburger {
@@ -52,19 +63,36 @@
   outline-offset: 2px;
 }
 
+/* Center Section - Title */
+.nav-center {
+  flex: 1;                  /* takes all remaining space */
+  display: flex;
+  justify-content: center;   /* centers title in its container */
+  padding: 0 20px;          /* prevents title from touching edges */
+}
+
 .report-title {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 900px;
+  white-space: nowrap;       /* keep on one line */
+}
+
+/* Right Section - Nav Title */
+.nav-right {
+  display: flex;
+  align-items: center;
+  min-width: 120px;          /* reserve enough space for the text */
+  justify-content: flex-end;
 }
 
 .nav-title {
   font-size: 18px;
-  margin-right: 60px;
+  white-space: nowrap;       /* keep on one line */
+  flex-shrink: 0;            /* do not shrink */
 }
 
-/* Dropdown */
-.dropdown {
+/* Dropdown Menu */
+.sa-dropdown {
   position: fixed;
   text-align: left;
   top: 65px;
@@ -91,7 +119,7 @@
   }
 }
 
-.nav-link {
+.sa-nav-link {
   text-decoration: none;
   color: #F6F1E9;
   font-size: 16px;
@@ -104,8 +132,8 @@
   gap: 12px;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.sa-nav-link:hover,
+.sa-nav-link:focus {
   background-color: #F6F1E9;
   color: #333;
   border-radius: 5px;
@@ -113,20 +141,20 @@
   outline-offset: -2px;
 }
 
-.nav-link-icon {
+.sa-nav-link-icon {
   font-size: 18px;
 }
 
-.nav-link-text {
+.sa-nav-link-text {
   flex: 1;
 }
 
-/* Filters */
+/* Filters Section */
 .report-filters {
   display: flex;
   gap: 20px;
   padding-top: 80px;
-  padding-left: 30px;
+  padding-left: 50px; /* aligned with table margin */
   align-items: center;
   flex-wrap: wrap;
 }
@@ -175,11 +203,11 @@
   outline-offset: 2px;
 }
 
-/* Table */
+/* Table Container */
 .report-table-container {
-  margin: 30px;
+  margin: 30px 0 30px 50px; /* match reorder page spacing */
   padding: 20px;
-  width: 850px;
+  width: 900px; /* same width as reorder-report */
   background: #fff;
   color: #333;
   border-radius: 10px;
@@ -187,6 +215,7 @@
   overflow-x: auto;
 }
 
+/* Table Styling */
 .report-table {
   width: 100%;
   border-collapse: collapse;
