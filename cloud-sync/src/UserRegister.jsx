@@ -124,16 +124,16 @@ export default function UserRegister() {
 
       {/* NAVBAR DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="ur-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="ur-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="ur-nav-link-icon">{item.icon}</span>
+              <span className="ur-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
@@ -243,7 +243,7 @@ export default function UserRegister() {
       </form>
 
       {/* EDIT USER TABLE */}
-      <div className="table-container">
+      <div className="ur-table-container">
         <h2>Edit User</h2>
         <table className="users-table">
           <thead>
