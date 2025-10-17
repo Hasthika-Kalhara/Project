@@ -133,16 +133,16 @@ export default function UserPermission() {
 
       {/* NAVBAR DROPDOWN */}
       {menuOpen && (
-        <div ref={dropdownRef} className="dropdown">
+        <div ref={dropdownRef} className="up-dropdown">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="nav-link"
+              className="up-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-link-icon">{item.icon}</span>
-              <span className="nav-link-text">{item.label}</span>
+              <span className="up-nav-link-icon">{item.icon}</span>
+              <span className="up-nav-link-text">{item.label}</span>
             </a>
           ))}
         </div>
